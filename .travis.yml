@@ -26,7 +26,7 @@ install:
   - "cd signallerd; dep ensure; cd .."
 
 before_script:
-  - "make signaller"
+  - "make signallerd"
 
 script:
   # Static Analysis (vet)
