@@ -19,7 +19,7 @@ const spConfig = {
 let si = null, sp = null;
 
 function start(doWhat) {
-    si = new Signaller("ws://" + signaller.value, handle.value);
+    si = new Signaller(signaller.value, handle.value);
     sp = new SimplePeer({
         initiator: doWhat === "connect",
         config: spConfig,
@@ -37,7 +37,9 @@ function start(doWhat) {
     else                     si.connect();
 
     sp.on('error', (err) => {
-        log.innerHTML += span("SimplePeer" + err);
+        log.innerHTML += span("SimplePeer " + err);
+        msg.setAttribute("disabled", "");
+        send.setAttribute("disabled", "");
     });
     sp.on('signal', (data) => {
         // The WebSocket connection of the signaller might have failed (and thus closed).
@@ -100,10 +102,12 @@ function span(txt) {
 
 (() => {
     handle.setAttribute("value", "random_" + random(10));
-    if (window.location.hostname)
-        signaller.setAttribute("value", window.location.hostname + ":8080");
+    if (window.location.hostname === "signaller.cecibot.com")
+        signaller.setAttribute("value", "wss://" + window.location.hostname);
+    else if (window.location.hostname)
+        signaller.setAttribute("value", "ws://" + window.location.hostname + ":8080");
     else
-        signaller.setAttribute("value", "127.0.0.1" + ":8080");
+        signaller.setAttribute("value", "ws://" + "127.0.0.1" + ":8080");
 
     document.querySelector("#msgbox").addEventListener("submit", (ev) => ev.preventDefault());
 })();

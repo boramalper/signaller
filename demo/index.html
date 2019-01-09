@@ -22,7 +22,12 @@
     </div>
 
     <div id="log">
-        <span>Logs will appear here!</span>
+        <span><b>How does it work?</b></span>
+        <span>1. Peer A "listens" on handle XXX.</span>
+        <span>2. Peer B "connects" to handle XXX that Peer A should already be listening on.</span>
+        <span>3. Peer A and Peer B start signalling each other to establish a P2P connection.</span>
+        <span>4. Both Peer A and Peer B close their WebSockets and now can communicate using WebRTC!</span>
+        <center><span>----</span></center>
     </div>
     <form id="msgbox">
         <input type="text" id="msg" disabled>

@@ -9,11 +9,11 @@ _A WebRTC signalling server in Go using WebSockets._
 
 ## Quick Start
 1. Generate a random handle and open a WebSocket to
-   `ws://example.com/listen/<handle>`.
+   `wss://signaller.cecibot.com/listen/<handle>`.
 2. The peer that you want to connect with must open a WebSocket
-   to `ws://example.com/connect/<handle>`.
+   to `ws://signaller.cecibot.com/connect/<handle>`.
 3. Now you can exchange WebRTC signals with each other using the WebSocket
-   you opened; your messages will be relayed through the **signaller** server at `example.com`.
+   you opened; your messages will be relayed through the **signaller** server at `signaller.cecibot.com`.
 
 ### Handles
 - Handles are at least 3 at most 32 characters long.
@@ -29,7 +29,7 @@ your signals until the underlying WebSocket is ready.
 1. Create a `Signaller` object by providing a `server` and a `handle`.
 
    ```javascript
-   let signaller = new Signaller("ws://example.com", "a_handle")
+   let signaller = new Signaller("wss://signaller.cecibot.com", "a_handle")
    ```
    
 2. Call either one of `.listen()` or `.connect()` methods, depending on whether you
