@@ -23,7 +23,7 @@ before_install:
 
 install:
   - "go get -u -v honnef.co/go/tools/cmd/staticcheck"
-  - "cd signallerd; dep ensure"
+  - "cd signallerd; dep ensure; cd .."
 
 before_script:
   - "make signaller"

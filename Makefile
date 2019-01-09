@@ -1,6 +1,6 @@
-.PHONY: signaller vet staticcheck format check-formatting
+.PHONY: signallerd vet staticcheck format check-formatting
 
-signaller:
+signallerd:
 	go install github.com/boramalper/signaller/signallerd
 
 vet:
