@@ -1,0 +1,52 @@
+#control {
+    max-width: 500px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 0.3em;
+
+    margin-bottom: 1em;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+}
+
+#log {
+    margin-top: 2em;
+    font-family: monospace, monospace;
+    border: 1px solid black;
+
+    max-width: calc(500px - 2 * 1px);
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#log span {
+    display: block;
+    padding: 0 4px 0 4px;
+    line-height: 1.3em;
+}
+
+#msgbox {
+    margin-top: 0.3em;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#msgbox input {
+    flex-grow: 1;
+}
+
+#msgbox button {
+    width: 80px;
+}

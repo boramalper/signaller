@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>example - signaller</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="control">
+        <form>
+            <label for="signaller">Signaller:</label>
+            <input type="text" spellcheck="false" autocapitalize="none" autocorrect="off" autocomplete="off" id="signaller">
+
+            <label for="handle">Handle:</label>
+            <input type="text" spellcheck="false" autocapitalize="none" autocorrect="off" autocomplete="off" id="handle" >
+        </form>
+
+        <button onclick="start('listen')" id="listen">Listen</button>
+        <br>
+        <button onclick="start('connect')" id="connect">Connect</button>
+    </div>
+
+    <div id="log">
+        <span>Logs will appear here!</span>
+    </div>
+    <form id="msgbox">
+        <input type="text" id="msg" disabled>
+        <button onclick="doSend()" disabled>Send</button>
+    </form>
+
+    <script src="simplepeer.min.js"></script>
+    <script src="signaller.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
